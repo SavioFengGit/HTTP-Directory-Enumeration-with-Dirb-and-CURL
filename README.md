@@ -1,5 +1,5 @@
 # HTTP-Directory-Enumeration-with-Dirb-and-CURL
-Let's see how to enumerate HTTP with Dirb and CURL
+Let's see how to do Directory Enumeration with Dirb and CURL
 # Introduction of the tool
 ## Dirb
 DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses. <br>
