@@ -2,9 +2,9 @@
 Let's see how to enumerate HTTP with Dirb and CURL
 # Introduction of the tool
 ## Dirb
-**DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses. <br>**
-**DIRB comes with a set of preconfigured attack wordlists for easy usage but you can use your custom wordlists. Also DIRB sometimes can be used as a classic CGI scanner, but remember that it is a content scanner not a vulnerability scanner.<br>**
-**DIRB’s main purpose is to help in professional web application auditing. Specially in security related testing. It covers some holes not covered by classic web vulnerability scanners. DIRB looks for specific web objects that other generic CGI scanners can’t look for. It doesn’t search vulnerabilities nor does it look for web contents that can be vulnerable.**
+DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analyzing the responses. <br>
+DIRB comes with a set of preconfigured attack wordlists for easy usage but you can use your custom wordlists. Also DIRB sometimes can be used as a classic CGI scanner, but remember that it is a content scanner not a vulnerability scanner.<br>
+DIRB’s main purpose is to help in professional web application auditing. Specially in security related testing. It covers some holes not covered by classic web vulnerability scanners. DIRB looks for specific web objects that other generic CGI scanners can’t look for. It doesn’t search vulnerabilities nor does it look for web contents that can be vulnerable.
 
 ### MANUAL:
 NAME
@@ -78,8 +78,8 @@ DESCRIPTION
               Amplify search with this extensions.
 
 ## CURL
-**CURL is a command line tool for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.<br>**
-**curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate, kerberos…), file transfer resume, proxy tunneling and a busload of other useful tricks.**
+CURL is a command line tool for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.<br>
+curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate, kerberos…), file transfer resume, proxy tunneling and a busload of other useful tricks.
 
 ### Usage: curl [options...] <url>
   - -d, --data <data>          **HTTP POST data**
@@ -101,36 +101,36 @@ For all options use the manual or "--help all".
 
 
 ## Example Directory enumeration with Dirb <br>
-dirb http://192.45.178.3<br>
+ - dirb http://192.45.178.3<br>
 <img src="dirb.png" width=70% height="auto"><br><br>
 
 
 
 ## Example Directory enumeration with curl <br>
-curl -X GET 192.45.178.3 **(GET REQUEST)** <br>
+1. curl -X GET 192.45.178.3 **(GET REQUEST)** <br>
 <img src="get.png" width=70% height="auto"><br><br> 
-curl -I 192.45.178.3 **(HEAD REQUEST)** <br>
+2. curl -I 192.45.178.3 **(HEAD REQUEST)** <br>
 <img src="head.png" width=70% height="auto"><br><br>
-curl -X OPTIONS 192.45.178.3 **(OPTIONS REQUEST)** <br>
+3. curl -X OPTIONS 192.45.178.3 **(OPTIONS REQUEST)** <br>
 <img src="option.png" width=70% height="auto"><br><br>
-curl -X POST 192.45.178.3 **(POST REQUEST)** <br>
+4. curl -X POST 192.45.178.3 **(POST REQUEST)** <br>
 <img src="post.png" width=70% height="auto"><br><br>
-curl -X PUT 192.45.178.3 **(PUT REQUEST)** <br>
+5. curl -X PUT 192.45.178.3 **(PUT REQUEST)** <br>
 <img src="put.png" width=70% height="auto"><br><br>
-curl -X OPTIONS 192.45.178.3/login.php **(OPTIONS REQUEST ON LOGIN.PHP)** <br>
+6. curl -X OPTIONS 192.45.178.3/login.php **(OPTIONS REQUEST ON LOGIN.PHP)** <br>
 <img src="optionslogin.png" width=70% height="auto"><br><br>
-curl -X POST 192.45.178.3/login.php **(POST REQUEST ON LOGIN.PHP)** <br>
+7. curl -X POST 192.45.178.3/login.php **(POST REQUEST ON LOGIN.PHP)** <br>
 <img src="login1.png" width=70% height="auto"><br><br>
-curl -X POST 192.45.178.3/login.php -d "name=john&password=password" -v **(POST REQUEST ON LOGIN.PHP WITH CREDENTIALS)** <br>
+8. curl -X POST 192.45.178.3/login.php -d "name=john&password=password" -v **(POST REQUEST ON LOGIN.PHP WITH CREDENTIALS)** <br>
 <img src="login2.png" width=70% height="auto"><br><br>
-curl -X OPTIONS 192.45.178.3/post.php **(OPTIONS REQUEST ON POST.PHP)** <br>
+9. curl -X OPTIONS 192.45.178.3/post.php **(OPTIONS REQUEST ON POST.PHP)** <br>
 <img src="optionspost.png" width=70% height="auto"><br><br>
-curl -X OPTIONS 192.45.178.3/uploads/ -v **(OPTIONS REQUEST ON UPLOADS DIRECTORY)**<br>
+10. curl -X OPTIONS 192.45.178.3/uploads/ -v **(OPTIONS REQUEST ON UPLOADS DIRECTORY)**<br>
 <img src="options.png" width=70% height="auto"><br><br>
-echo "Hello World" > hello.txt **(CREATION A RANDOM TXT)** <br>
-curl 192.45.178.3/uploads/ --upload-file hello.txt **(UPLOAD REQUEST ON THE DIRECTORY UPLOADS)** <br>
+11. echo "Hello World" > hello.txt **(CREATION A RANDOM TXT)** <br>
+12. curl 192.45.178.3/uploads/ --upload-file hello.txt **(UPLOAD REQUEST ON THE DIRECTORY UPLOADS)** <br>
 <img src="upload.png" width=70% height="auto"><br><br>
-curl -X DELETE 192.45.178.3/uploads/hello.txt **(DELETE REQUEST ON THE DIRECTORY UPLOADS OF THE FILE hello.txt)** <br>
+13. curl -X DELETE 192.45.178.3/uploads/hello.txt **(DELETE REQUEST ON THE DIRECTORY UPLOADS OF THE FILE hello.txt)** <br>
 <img src="delete.png" width=70% height="auto"><br><br> 
 
 
