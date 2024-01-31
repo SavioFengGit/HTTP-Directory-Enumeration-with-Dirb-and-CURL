@@ -98,3 +98,41 @@ DESCRIPTION
 This is not the full help, this menu is stripped into categories.
 Use "--help category" to get an overview of all categories.
 For all options use the manual or "--help all".
+
+
+## Example Directory enumeration with Dirb <br>
+dirb http://192.45.178.3<br>
+<img src="dirb.png" width=70% height="auto"><br><br>
+
+
+
+## Example Directory enumeration with curl <br>
+curl -X GET 192.45.178.3 **(GET REQUEST)** <br>
+<img src="get.png" width=70% height="auto"><br><br> 
+curl -I 192.45.178.3 **(HEAD REQUEST)** <br>
+<img src="head.png" width=70% height="auto"><br><br>
+curl -X OPTIONS 192.45.178.3 **(OPTIONS REQUEST)** <br>
+<img src="option.png" width=70% height="auto"><br><br>
+curl -X POST 192.45.178.3 **(POST REQUEST)** <br>
+<img src="post.png" width=70% height="auto"><br><br>
+curl -X PUT 192.45.178.3 **(PUT REQUEST)** <br>
+<img src="put.png" width=70% height="auto"><br><br>
+curl -X OPTIONS 192.45.178.3/login.php **(OPTIONS REQUEST ON LOGIN.PHP)** <br>
+<img src="optionslogin.png" width=70% height="auto"><br><br>
+curl -X POST 192.45.178.3/login.php **(POST REQUEST ON LOGIN.PHP)** <br>
+<img src="login1.png" width=70% height="auto"><br><br>
+curl -X POST 192.45.178.3/login.php -d "name=john&password=password" -v **(POST REQUEST ON LOGIN.PHP WITH CREDENTIALS)** <br>
+<img src="login2.png" width=70% height="auto"><br><br>
+curl -X OPTIONS 192.45.178.3/post.php **(OPTIONS REQUEST ON POST.PHP)** <br>
+<img src="optionspost.png" width=70% height="auto"><br><br>
+curl -X OPTIONS 192.45.178.3/uploads/ -v **(OPTIONS REQUEST ON UPLOADS DIRECTORY)**<br>
+<img src="options.png" width=70% height="auto"><br><br>
+echo "Hello World" > hello.txt **(CREATION A RANDOM TXT)** <br>
+curl 192.45.178.3/uploads/ --upload-file hello.txt **(UPLOAD REQUEST ON THE DIRECTORY UPLOADS)** <br>
+<img src="upload.png" width=70% height="auto"><br><br>
+curl -X DELETE 192.45.178.3/uploads/hello.txt **(DELETE REQUEST ON THE DIRECTORY UPLOADS OF THE FILE hello.txt)** <br>
+<img src="delete.png" width=70% height="auto"><br><br> 
+
+
+#Author
+<b>Xiao Li Savio Feng</b>
