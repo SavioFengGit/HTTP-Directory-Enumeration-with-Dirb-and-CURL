@@ -101,36 +101,38 @@ For all options use the manual or "--help all".
 
 
 ## Example Directory enumeration with Dirb <br>
- - dirb http://192.45.178.3<br>
+Target 192.29.104.3
+ - dirb http://192.29.104.3<br>
 <img src="dirb.png" width=70% height="auto"><br><br>
 
 
 
 ## Example Directory enumeration with curl <br>
-1. curl -X GET 192.45.178.3 **(GET REQUEST)** <br>
+Target 192.29.104.3
+1. curl -X GET 192.29.104.3 **(GET REQUEST)** <br>
 <img src="get.png" width=70% height="auto"><br><br> 
-2. curl -I 192.45.178.3 **(HEAD REQUEST)** <br>
+2. curl -I 192.29.104.3 **(HEAD REQUEST)** <br>
 <img src="head.png" width=70% height="auto"><br><br>
-3. curl -X OPTIONS 192.45.178.3 **(OPTIONS REQUEST)** <br>
+3. curl -X OPTIONS 192.29.104.3 -v **(OPTIONS REQUEST)** <br>
 <img src="option.png" width=70% height="auto"><br><br>
-4. curl -X POST 192.45.178.3 **(POST REQUEST)** <br>
+4. curl -X POST 192.29.104.3 **(POST REQUEST)** <br>
 <img src="post.png" width=70% height="auto"><br><br>
-5. curl -X PUT 192.45.178.3 **(PUT REQUEST)** <br>
+5. curl -X PUT 192.29.104.3 **(PUT REQUEST)** <br>
 <img src="put.png" width=70% height="auto"><br><br>
-6. curl -X OPTIONS 192.45.178.3/login.php **(OPTIONS REQUEST ON LOGIN.PHP)** <br>
+6. curl -X OPTIONS 192.29.104.3/login.php **(OPTIONS REQUEST ON LOGIN.PHP)** <br>
 <img src="optionslogin.png" width=70% height="auto"><br><br>
-7. curl -X POST 192.45.178.3/login.php **(POST REQUEST ON LOGIN.PHP)** <br>
+7. curl -X POST 192.29.104.3/login.php **(POST REQUEST ON LOGIN.PHP)** <br>
 <img src="login1.png" width=70% height="auto"><br><br>
-8. curl -X POST 192.45.178.3/login.php -d "name=john&password=password" -v **(POST REQUEST ON LOGIN.PHP WITH CREDENTIALS)** <br>
+8. curl -X POST 192.29.104.3/login.php -d "name=john&password=password" -v **(POST REQUEST ON LOGIN.PHP WITH CREDENTIALS)** <br>
 <img src="login2.png" width=70% height="auto"><br><br>
-9. curl -X OPTIONS 192.45.178.3/post.php **(OPTIONS REQUEST ON POST.PHP)** <br>
+9. curl -X OPTIONS 192.29.104.3/post.php **(OPTIONS REQUEST ON POST.PHP)** <br>
 <img src="optionspost.png" width=70% height="auto"><br><br>
-10. curl -X OPTIONS 192.45.178.3/uploads/ -v **(OPTIONS REQUEST ON UPLOADS DIRECTORY)**<br>
+10. curl -X OPTIONS 192.29.104.3/uploads/ -v **(OPTIONS REQUEST ON UPLOADS DIRECTORY)** <br>
 <img src="options.png" width=70% height="auto"><br><br>
 11. echo "Hello World" > hello.txt **(CREATION A RANDOM TXT)** <br>
-12. curl 192.45.178.3/uploads/ --upload-file hello.txt **(UPLOAD REQUEST ON THE DIRECTORY UPLOADS)** <br>
+12. curl 192.29.104.3/uploads/ --upload-file hello.txt **(UPLOAD REQUEST ON THE DIRECTORY UPLOADS)** <br>
 <img src="upload.png" width=70% height="auto"><br><br>
-13. curl -X DELETE 192.45.178.3/uploads/hello.txt **(DELETE REQUEST ON THE DIRECTORY UPLOADS OF THE FILE hello.txt)** <br>
+13. curl -X DELETE 192.29.104.3/uploads/hello.txt **(DELETE REQUEST ON THE DIRECTORY UPLOADS OF THE FILE hello.txt)** <br>
 <img src="delete.png" width=70% height="auto"><br><br> 
 
 
